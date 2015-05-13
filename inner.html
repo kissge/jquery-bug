@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+        <script>
+         var ver = location.search.substr(1);
+         document.write('<script src="https://code.jquery.com/jquery-' + ver + '.js"><\/script>jQuery ' + ver);
+        </script>
+    </head>
+    <body style="background-color: white;">
+        <input type="button" value="Go" />
+        <script>
+         $(function () {
+             $('input').on('click', function () {
+                 $('#box1', window.parent.document).hide();
+                 $('#box2', window.parent.document).hide();
+                 $('#box3', window.parent.document).show();
+                 $('html, body', window.parent.document).animate({ scrollTop: 0 }, 500).animate({ scrollTop: 1000 }, 500);
+             });
+         });
+        </script>
+    </body>
+</html>
